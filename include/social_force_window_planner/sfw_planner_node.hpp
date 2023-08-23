@@ -122,8 +122,10 @@ public:
     * @param speed_limit Speed limit to use
     * @param percentage Bool if the speed limit is absolute or relative
     */
-  void setSpeedLimit(const double & speed_limit, const bool & percentage) override;
-
+  void setSpeedLimit(const double & speed_limit, const bool & percentage) override {
+    RCLCPP_INFO(logger_, "setSpeedLimit. Speed_limit: %f", speed_limit);
+    RCLCPP_INFO(logger_, "setSpeedLimit. Percentage: %d", percentage);
+  }
 protected:
   /**
    * @brief Transforms global plan into same frame as pose (robot_pose), clips
